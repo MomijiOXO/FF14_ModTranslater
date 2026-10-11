@@ -20,9 +20,9 @@
     "RepoUrl": "https://github.com/MomijiOXO/FF14_ModTranslater",
     "IsHide": false,
     "IsTestingExclusive": false,
-    "LastUpdate": 1791698657,
-    "DownloadLinkInstall": "https://github.com/MomijiOXO/FF14_ModTranslater/releases/download/0.1.0/ModTranslater-v0.1.0.zip",
-    "DownloadLinkUpdate": "https://github.com/MomijiOXO/FF14_ModTranslater/releases/download/0.1.0/ModTranslater-v0.1.0.zip",
+    "LastUpdate": 1791700496,
+    "DownloadLinkInstall": "https://github.com/MomijiOXO/FF14_ModTranslater/releases/download/0.1.0/ModTranslater-v0.1.0-icon.zip",
+    "DownloadLinkUpdate": "https://github.com/MomijiOXO/FF14_ModTranslater/releases/download/0.1.0/ModTranslater-v0.1.0-icon.zip",
     "IconUrl": "https://raw.githubusercontent.com/MomijiOXO/FF14_ModTranslater/main/icon.png"
   }
 ]
