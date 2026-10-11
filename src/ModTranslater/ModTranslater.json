@@ -2,7 +2,7 @@
   "Author": "MomijiOXO",
   "Name": "ModTranslater(CN)",
   "InternalName": "ModTranslater",
-  "AssemblyVersion": "0.1.1.0",
+  "AssemblyVersion": "0.1.2.0",
   "Description": "翻译 Penumbra 已安装 Mod 的选项文本。支持增量扫描、多选强制汉化。配置翻译api进行翻译，或配置openAI api进行翻译，凭证在本地加密保存。",
   "Punchline": "将 Penumbra Mod 的英文选项翻译为中文",
   "ApplicableVersion": "any",

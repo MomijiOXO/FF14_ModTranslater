@@ -8,8 +8,8 @@ using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using ModTranslater.Core;
 
-[assembly: AssemblyVersion("0.1.1.0")]
-[assembly: AssemblyFileVersion("0.1.1.0")]
+[assembly: AssemblyVersion("0.1.2.0")]
+[assembly: AssemblyFileVersion("0.1.2.0")]
 namespace ModTranslater;
 
 public sealed class Plugin : IDalamudPlugin
@@ -98,7 +98,7 @@ public sealed class Plugin : IDalamudPlugin
             foreach (var mod in chosen)
             {
                 token.ThrowIfCancellationRequested();
-                try { await engine.RestoreAsync(mod, token); results.Add(new(mod.Key, mod.Name, "已恢复备份")); }
+                try { await engine.RestoreAsync(mod, token); results.Add(new(mod.Key, mod.Name, "已恢复最早原版")); }
                 catch (OperationCanceledException) when (token.IsCancellationRequested) { throw; }
                 catch { results.Add(new(mod.Key, mod.Name, "恢复失败：无备份、文件已更新或刷新不可用")); }
             }
@@ -146,11 +146,11 @@ public sealed class Plugin : IDalamudPlugin
         if (ImGui.Button("扫描新增与更新")) Translate(false); ImGui.SameLine();
         ImGui.BeginDisabled(selected.Count == 0);
         if (ImGui.Button($"强制汉化所选 ({selected.Count})")) Translate(true); ImGui.SameLine();
-        if (ImGui.Button("恢复所选备份")) ImGui.OpenPopup("restore-confirm");
+        if (ImGui.Button("恢复所选原版")) ImGui.OpenPopup("restore-confirm");
         ImGui.EndDisabled();
         if (ImGui.BeginPopup("restore-confirm"))
         {
-            ImGui.TextWrapped("将恢复所选 Mod 最近一次汉化前的文本。汉化后已被更新或编辑的文件会拒绝覆盖。");
+            ImGui.TextWrapped("将恢复所选 Mod 最早保存的原版。后续汉化不会覆盖原始备份。Mod 已更新或编辑时会拒绝覆盖。");
             if (ImGui.Button("确认恢复")) { Restore(); ImGui.CloseCurrentPopup(); }
             ImGui.SameLine(); if (ImGui.Button("取消")) ImGui.CloseCurrentPopup(); ImGui.EndPopup();
         }
