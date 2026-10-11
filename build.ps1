@@ -26,7 +26,7 @@ Compile-Project 'ModTranslater' (Join-Path $PSScriptRoot 'src/ModTranslater') 'l
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'src/ModTranslater/ModTranslater.json') -Destination $out
 $images = Join-Path $out 'images'
 New-Item -ItemType Directory -Force $images | Out-Null
-Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'icon.png') -Destination (Join-Path $images 'icon.png')
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'images/icon.png') -Destination (Join-Path $images 'icon.png')
 $manifestPath = Join-Path $out 'ModTranslater.json'
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
 $manifest.DalamudApiLevel = [System.Reflection.AssemblyName]::GetAssemblyName((Join-Path $DalamudRoot 'Dalamud.dll')).Version.Major
