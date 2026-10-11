@@ -32,7 +32,8 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
                     var recoveredCommit = recoveredRestore ?? (old?.Fingerprint != snapshot.Fingerprint ? ModWriter.FindUnrecordedCommit(mod, backups) : null);
                     if (recoveredCommit is not null)
                     {
-                        records[mod.Key] = old = new() { Fingerprint = snapshot.Fingerprint, Status = "PendingReload", Backup = recoveredCommit };
+                        records[mod.Key] = old = new() { Fingerprint = snapshot.Fingerprint, Status = "PendingReload", Backup = recoveredCommit,
+                            CurrentHashes = snapshot.OriginalFiles.ToDictionary(kv => kv.Key, kv => ModSnapshot.Hash(kv.Value)) };
                         JsonStorage.Save(RecordsPath, records);
                         ModWriter.Acknowledge(recoveredCommit);
                     }
@@ -43,7 +44,7 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
                     else if (!force && old?.Fingerprint == snapshot.Fingerprint && old.Status != "Failed") status = "未变化";
                     else if (!force && snapshot.Texts.Any(t => TextRules.HasChinese(t.Original)))
                     {
-                        records[mod.Key] = new() { Fingerprint = snapshot.Fingerprint, Status = "Chinese", Backup = old?.Backup };
+                        records[mod.Key] = new() { Fingerprint = snapshot.Fingerprint, Status = "Chinese", Backup = old?.Backup, CurrentHashes = old?.CurrentHashes };
                         status = "含中文，跳过整个 Mod";
                     }
                     else
@@ -51,7 +52,7 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
                         var entries = snapshot.Texts.Where(t => TextRules.ShouldTranslate(t.Original)).ToArray();
                         if (entries.Length == 0)
                         {
-                            records[mod.Key] = new() { Fingerprint = snapshot.Fingerprint, Status = "NoText", Backup = old?.Backup };
+                            records[mod.Key] = new() { Fingerprint = snapshot.Fingerprint, Status = "NoText", Backup = old?.Backup, CurrentHashes = old?.CurrentHashes };
                             status = "无待翻译英文";
                         }
                         else
@@ -77,10 +78,12 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
                             snapshot.Apply(entries, entries.Select((e, j) => outputs[j] ?? map[e.Original]).ToArray());
                             var backup = ModWriter.Commit(snapshot, Path.Combine(dataDirectory, "backups"), token);
                             var after = new ModSnapshot(mod);
-                            records[mod.Key] = new() { Fingerprint = after.Fingerprint, Status = "PendingReload", Backup = backup ?? old?.Backup };
+                            records[mod.Key] = new() { Fingerprint = after.Fingerprint, Status = "PendingReload", Backup = backup ?? old?.Backup,
+                                CurrentHashes = after.OriginalFiles.ToDictionary(kv => kv.Key, kv => ModSnapshot.Hash(kv.Value)) };
                             JsonStorage.Save(RecordsPath, records);
                             ModWriter.Acknowledge(backup);
                             await bridge.ReloadAsync(mod, CancellationToken.None);
+                            records[mod.Key].CurrentHashes = new ModSnapshot(mod).OriginalFiles.ToDictionary(kv => kv.Key, kv => ModSnapshot.Hash(kv.Value));
                             records[mod.Key].Status = "Translated"; status = "汉化完成";
                         }
                     }
@@ -90,7 +93,8 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
                 {
                     // Never include exception text: providers may echo credentials or request URLs.
                     if (!records.TryGetValue(mod.Key, out var pending) || pending.Status != "PendingReload")
-                        records[mod.Key] = new() { Status = "Failed", Backup = records.GetValueOrDefault(mod.Key)?.Backup };
+                        records[mod.Key] = new() { Status = "Failed", Backup = records.GetValueOrDefault(mod.Key)?.Backup,
+                            CurrentHashes = records.GetValueOrDefault(mod.Key)?.CurrentHashes };
                     status = records[mod.Key].Status == "PendingReload" ? "汉化已写入，刷新失败；下次扫描重试刷新" : "处理失败：" + SafeErrors.Describe(error);
                 }
                 JsonStorage.Save(RecordsPath, records); results.Add(new(mod.Key, mod.Name, status));
@@ -107,14 +111,18 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
         {
             using var processLock = await AcquireProcessLock(token);
             var records = LoadRecords();
-            if (!records.TryGetValue(mod.Key, out var record) || record.Backup is null) throw new IOException("此 Mod 没有可恢复的备份。");
-            var backups = Path.GetFullPath(Path.Combine(dataDirectory, "backups")) + Path.DirectorySeparatorChar;
-            if (!Path.GetFullPath(record.Backup).StartsWith(backups, StringComparison.OrdinalIgnoreCase)) throw new IOException("备份路径无效。");
-            ModWriter.Restore(mod, record.Backup, token);
+            records.TryGetValue(mod.Key, out var record);
+            var backups = Path.Combine(dataDirectory, "backups");
+            var recovered = ModWriter.RecoverInterrupted(mod, backups, token);
+            var restored = OriginalBackups.Restore(new ModSnapshot(mod), backups, record?.CurrentHashes, token) ?? recovered;
+            record ??= new(); records[mod.Key] = record;
+            record.Backup = restored ?? record.Backup;
             record.Fingerprint = new ModSnapshot(mod).Fingerprint; record.Status = "PendingReload";
+            record.CurrentHashes = new ModSnapshot(mod).OriginalFiles.ToDictionary(kv => kv.Key, kv => ModSnapshot.Hash(kv.Value));
             JsonStorage.Save(RecordsPath, records);
             ModWriter.Acknowledge(record.Backup);
             await bridge.ReloadAsync(mod, CancellationToken.None);
+            record.CurrentHashes = new ModSnapshot(mod).OriginalFiles.ToDictionary(kv => kv.Key, kv => ModSnapshot.Hash(kv.Value));
             record.Status = "Restored"; JsonStorage.Save(RecordsPath, records);
         }
         finally { gate.Release(); }

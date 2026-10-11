@@ -118,6 +118,7 @@ public static class ModWriter
         var changed = snapshot.ChangedFiles();
         if (changed.Count == 0) return null;
         snapshot.CheckUnchanged(); token.ThrowIfCancellationRequested();
+        OriginalBackups.Ensure(snapshot, backups);
         var folder = Path.Combine(backups, DateTime.UtcNow.ToString("yyyyMMdd-HHmmss") + "-" + Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(folder);
         var manifest = new BackupManifest { ModPath = snapshot.Mod.FullPath };

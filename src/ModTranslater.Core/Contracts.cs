@@ -21,4 +21,5 @@ public sealed class ProcessRecord
     public string Fingerprint { get; set; } = "";
     public string Status { get; set; } = "";
     public string? Backup { get; set; }
+    public Dictionary<string, string>? CurrentHashes { get; set; }
 }
