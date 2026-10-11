@@ -1,1 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk" />
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <EmbeddedResource Include="translations/Phrases.zh-CN.json" />
+  </ItemGroup>
+</Project>

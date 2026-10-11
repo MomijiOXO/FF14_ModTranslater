@@ -13,7 +13,54 @@ public sealed class TranslationService(HttpClient http, ProviderOptions options,
     private DateTimeOffset lastRequest = DateTimeOffset.MinValue;
     public async Task<IReadOnlyList<string>> TranslateAsync(IReadOnlyList<string> texts, CancellationToken token)
     {
-        Validate(); var result = new List<string>();
+        Validate();
+        var segments = new List<string>();
+        var indexes = new Dictionary<string, int>(StringComparer.Ordinal);
+        var plans = new List<List<(string Literal, int TranslationIndex)>>();
+        foreach (var text in texts)
+        {
+            token.ThrowIfCancellationRequested();
+            if (options.Provider is TranslationProvider.OpenAI or TranslationProvider.Google && text.Length > 12000)
+                throw new InvalidDataException("单条文本过长，未发送请求。");
+            if (options.Provider is TranslationProvider.Baidu or TranslationProvider.Tencent or TranslationProvider.Youdao
+                && Encoding.UTF8.GetByteCount(text) > 5500)
+                throw new InvalidDataException("文本超过此服务的单次请求长度，请使用 AI 接口。");
+            var pieces = new List<(string Literal, int TranslationIndex)>();
+            var cursor = 0;
+            foreach (System.Text.RegularExpressions.Match match in ModSnapshot.FindProtectedTokens(text))
+            {
+                AddText(text[cursor..match.Index]);
+                pieces.Add((match.Value, -1));
+                cursor = match.Index + match.Length;
+            }
+            AddText(text[cursor..]);
+            plans.Add(pieces);
+
+            void AddText(string value)
+            {
+                if (!TextRules.ShouldTranslate(value)) { pieces.Add((value, -1)); return; }
+                var trimmed = value.Trim();
+                var start = value.IndexOf(trimmed, StringComparison.Ordinal);
+                pieces.Add((value[..start], -1));
+                if (!indexes.TryGetValue(trimmed, out var index))
+                {
+                    index = segments.Count;
+                    indexes.Add(trimmed, index);
+                    segments.Add(trimmed);
+                }
+                pieces.Add(("", index));
+                pieces.Add((value[(start + trimmed.Length)..], -1));
+            }
+        }
+        IReadOnlyList<string> translated = segments.Count == 0
+            ? Array.Empty<string>() : await TranslateUnprotectedAsync(segments, token);
+        return plans.Select(pieces => string.Concat(pieces.Select(piece =>
+            piece.TranslationIndex < 0 ? piece.Literal : translated[piece.TranslationIndex]))).ToArray();
+    }
+
+    private async Task<IReadOnlyList<string>> TranslateUnprotectedAsync(IReadOnlyList<string> texts, CancellationToken token)
+    {
+        var result = new List<string>();
         if (options.Provider == TranslationProvider.OpenAI)
         {
             foreach (var batch in Batch(texts, 24, 5000))
@@ -56,9 +103,9 @@ public sealed class TranslationService(HttpClient http, ProviderOptions options,
                     var request = JsonRequest(new("https://translation.googleapis.com/language/translate/v2"), body);
                     request.Headers.Add("X-Goog-Api-Key", credentials.Id); return request;
                 }, token);
-                var array = json["data"]?["translations"]?.AsArray() ?? throw new InvalidDataException("Google 返回缺少译文。");
-                if (array.Count != batch.Length) throw new InvalidDataException("Google 返回数量不一致。");
-                result.AddRange(array.Select(x => WebUtility.HtmlDecode(x?["translatedText"]?.GetValue<string>() ?? throw new InvalidDataException("Google 返回空条目。"))));
+                var array = json["data"]?["translations"]?.AsArray() ?? throw new TranslationDiagnosticException(TranslationFailure.GoogleMissingTranslations);
+                if (array.Count != batch.Length) throw new TranslationDiagnosticException(TranslationFailure.GoogleCountMismatch);
+                result.AddRange(array.Select(x => WebUtility.HtmlDecode(x?["translatedText"]?.GetValue<string>() ?? throw new TranslationDiagnosticException(TranslationFailure.GoogleEmptyTranslation))));
             }
         }
         else
@@ -160,17 +207,17 @@ public sealed class TranslationService(HttpClient http, ProviderOptions options,
                 var delay = response.Headers.RetryAfter?.Delta ?? TimeSpan.FromSeconds(2 * (attempt + 1));
                 await Task.Delay(TimeSpan.FromSeconds(Math.Clamp(delay.TotalSeconds, 1, 30)), token); continue;
             }
-            if (!response.IsSuccessStatusCode) throw new InvalidDataException($"翻译服务 HTTP {(int)response.StatusCode}，请检查连接、凭证和额度。");
+            if (!response.IsSuccessStatusCode) throw new TranslationDiagnosticException(TranslationFailure.HttpResponse, (int)response.StatusCode);
             await using var stream = await response.Content.ReadAsStreamAsync(token);
             using var buffer = new MemoryStream(); var block = new byte[8192];
             int read;
             while ((read = await stream.ReadAsync(block, token)) > 0)
             {
-                if (buffer.Length + read > 4 * 1024 * 1024) throw new InvalidDataException("翻译响应过大。");
+                if (buffer.Length + read > 4 * 1024 * 1024) throw new TranslationDiagnosticException(TranslationFailure.ResponseTooLarge);
                 buffer.Write(block, 0, read);
             }
-            try { return JsonNode.Parse(buffer.ToArray())?.AsObject() ?? throw new InvalidDataException("翻译响应为空。"); }
-            catch (JsonException) { throw new InvalidDataException("翻译服务返回无效 JSON。"); }
+            try { return JsonNode.Parse(buffer.ToArray())?.AsObject() ?? throw new TranslationDiagnosticException(TranslationFailure.EmptyResponse); }
+            catch (JsonException) { throw new TranslationDiagnosticException(TranslationFailure.InvalidResponseJson); }
         }
     }
     private static IEnumerable<string[]> Batch(IReadOnlyList<string> texts, int count, int characters)

@@ -81,18 +81,19 @@ public sealed class ModSnapshot
     }
     public void Apply(IReadOnlyList<TextEntry> targets, IReadOnlyList<string> translations)
     {
-        if (translations.Count != targets.Count) throw new InvalidDataException("翻译返回条目数量不一致。");
+        if (translations.Count != targets.Count) throw new TranslationDiagnosticException(TranslationFailure.TranslationCountMismatch);
         for (var i = 0; i < targets.Count; i++)
         {
             var output = translations[i];
             if (string.IsNullOrWhiteSpace(output) || output.Length > Math.Max(4096, targets[i].Original.Length * 8))
-                throw new InvalidDataException("翻译返回空文本或异常长度。");
+                throw new TranslationDiagnosticException(TranslationFailure.InvalidTranslationLength);
             if (!Tokens(targets[i].Original).SequenceEqual(Tokens(output)))
-                throw new InvalidDataException("翻译改变了占位符、链接或格式标签，已拒绝写入。");
+                throw new TranslationDiagnosticException(TranslationFailure.ProtectedTokenChanged);
             targets[i].Owner[targets[i].Field] = output;
         }
     }
-    private static string[] Tokens(string text) => Regex.Matches(text, @"\{[^{}]+\}|%[sdif]|<[^>]+>|https?://\S+")
+    internal static MatchCollection FindProtectedTokens(string text) => Regex.Matches(text, @"\{[^{}]+\}|%[sdif]|<[^>]+>|https?://\S+");
+    private static string[] Tokens(string text) => FindProtectedTokens(text)
         .Select(m => m.Value).Order(StringComparer.Ordinal).ToArray();
     public Dictionary<string, byte[]> ChangedFiles() => Documents.Where(kv =>
         Texts.Any(t => t.Location.StartsWith(kv.Key, StringComparison.OrdinalIgnoreCase) && t.Owner[t.Field]?.GetValue<string>() != t.Original))

@@ -56,12 +56,25 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
                         }
                         else
                         {
-                            progress?.Report(new(i, targets.Length, mod.Name, "翻译中")); service ??= serviceFactory();
-                            var unique = entries.Select(e => e.Original).Distinct(StringComparer.Ordinal).ToArray();
-                            var translated = await service.TranslateAsync(unique, token);
-                            if (translated.Count != unique.Length) throw new InvalidDataException("翻译条目数量不一致。");
-                            var map = unique.Zip(translated).ToDictionary(p => p.First, p => p.Second, StringComparer.Ordinal);
-                            snapshot.Apply(entries, entries.Select(e => map[e.Original]).ToArray());
+                            // Resolve each entry first: identical words can mean different things in different groups.
+                            var outputs = new string?[entries.Length];
+                            for (var j = 0; j < entries.Length; j++)
+                                if (BuiltInTranslations.TryTranslate(snapshot, entries[j].Original, out var translated)
+                                    || PhraseTranslations.TryTranslate(snapshot, entries[j], out translated))
+                                    outputs[j] = translated;
+                            var missing = entries.Where((_, j) => outputs[j] is null).Select(e => e.Original)
+                                .Distinct(StringComparer.Ordinal).ToArray();
+                            progress?.Report(new(i, targets.Length, mod.Name, $"内置字典命中 {outputs.Count(t => t is not null)}/{entries.Length} 条"));
+                            var map = new Dictionary<string, string>(StringComparer.Ordinal);
+                            if (missing.Length > 0)
+                            {
+                                service ??= serviceFactory();
+                                progress?.Report(new(i, targets.Length, mod.Name, $"API 翻译剩余 {missing.Length} 条"));
+                                var translated = await service.TranslateAsync(missing, token);
+                                if (translated.Count != missing.Length) throw new InvalidDataException("翻译条目数量不一致。");
+                                foreach (var (original, text) in missing.Zip(translated)) map.Add(original, text);
+                            }
+                            snapshot.Apply(entries, entries.Select((e, j) => outputs[j] ?? map[e.Original]).ToArray());
                             var backup = ModWriter.Commit(snapshot, Path.Combine(dataDirectory, "backups"), token);
                             var after = new ModSnapshot(mod);
                             records[mod.Key] = new() { Fingerprint = after.Fingerprint, Status = "PendingReload", Backup = backup ?? old?.Backup };
