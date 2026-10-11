@@ -1,4 +1,4 @@
-param([string]$SdkRoot = "$PSScriptRoot/work/dotnet", [string]$DalamudRoot = "$PSScriptRoot/work/dalamud-cn")
+﻿param([string]$SdkRoot = "$PSScriptRoot/work/dotnet", [string]$DalamudRoot = "$PSScriptRoot/work/dalamud-cn")
 $ErrorActionPreference = 'Stop'
 $dotnet = Join-Path $SdkRoot 'dotnet.exe'
 $compiler = Get-ChildItem (Join-Path $SdkRoot 'sdk') -Directory | Sort-Object Name -Descending | Select-Object -First 1
@@ -17,7 +17,8 @@ function Compile-Project([string]$name, [string]$sourceDir, [string]$kind, [stri
     & $dotnet (Join-Path $compiler.FullName 'Roslyn/bincore/csc.dll') "@$response"
     if ($LASTEXITCODE -ne 0) { throw "$name 编译失败" }
 }
-Compile-Project 'ModTranslater.Core' (Join-Path $PSScriptRoot 'src/ModTranslater.Core') 'library' @()
+$phraseResource = Join-Path $PSScriptRoot 'src/ModTranslater.Core/translations/Phrases.zh-CN.json'
+Compile-Project 'ModTranslater.Core' (Join-Path $PSScriptRoot 'src/ModTranslater.Core') 'library' @(('/resource:"' + $phraseResource + '",ModTranslater.Core.translations.Phrases.zh-CN.json'))
 if (!(Test-Path (Join-Path $DalamudRoot 'Dalamud.dll'))) { throw '请使用 -DalamudRoot 指定卫月程序集目录。' }
 $libs = @(Get-ChildItem -LiteralPath $DalamudRoot -Filter '*.dll' | Where-Object { $_.Name -notmatch '^(System\.|Microsoft\.|cimgui|cimguizmo|cimplot|lib|nethost|hostfxr|hostpolicy)' } | ForEach-Object {
     try { [System.Reflection.AssemblyName]::GetAssemblyName($_.FullName) | Out-Null; '/reference:"' + $_.FullName + '"' } catch { }
