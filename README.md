@@ -4,12 +4,21 @@
 
 支持 OpenAI 兼容接口、百度翻译、腾讯翻译、有道翻译和 Google Cloud 翻译。API 凭证在本地加密保存。
 
+## 安装
+
+在卫月设置的“实验性 → 自定义插件仓库”中添加以下链接并保存，然后在插件安装器中搜索 `ModTranslater(CN)` 并安装：
+
+```text
+https://raw.githubusercontent.com/MomijiOXO/FF14_ModTranslater/main/repo.json
+```
+
+也可从 [Releases](https://github.com/MomijiOXO/FF14_ModTranslater/releases) 下载 ZIP，解压后在卫月开发插件设置中添加 `ModTranslater.dll`。切换安装方式前，请先停用原来的开发插件副本。
+
 ## 使用方法
 
-1. 解压插件包，在卫月开发插件设置中添加 `ModTranslater.dll` 并加载。保留同目录下的其他插件文件。
-2. 启用 Penumbra，输入 `/modtrans` 或点击插件的窗口按钮。
-3. 在“翻译服务”页配置 API 并保存。OpenAI 兼容接口还需要填写接口地址和模型名称。
-4. 在“模组汉化”页点击“扫描新增与更新”，或勾选多个 Mod 后点击“强制汉化所选”。
+1. 启用 Penumbra，输入 `/modtrans` 或点击插件的窗口按钮。
+2. 在“翻译服务”页配置 API 并保存。OpenAI 兼容接口还需要填写接口地址和模型名称。
+3. 在“模组汉化”页点击“扫描新增与更新”，或勾选多个 Mod 后点击“强制汉化所选”。
 
 插件自动读取 Penumbra 的 Mod 目录，无需手动选择文件夹。
 
