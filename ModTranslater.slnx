@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/ModTranslater.Core/ModTranslater.Core.csproj" />
+  <Project Path="src/ModTranslater/ModTranslater.csproj" />
+</Solution>
+

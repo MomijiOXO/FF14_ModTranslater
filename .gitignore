@@ -1,0 +1,10 @@
+work/
+**/bin/
+**/obj/
+dist/
+*.user
+*.suo
+secrets.json
+settings.json
+records.json
+backups/
