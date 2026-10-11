@@ -1,0 +1,1457 @@
+[
+  {
+    "scope": "General",
+    "source": "On",
+    "translation": "开启"
+  },
+  {
+    "scope": "General",
+    "source": "Off",
+    "translation": "关闭"
+  },
+  {
+    "scope": "General",
+    "source": "ON (Lala)",
+    "translation": "开启（拉拉菲尔）"
+  },
+  {
+    "scope": "General",
+    "source": "Required files",
+    "translation": "必需文件"
+  },
+  {
+    "scope": "General",
+    "source": "Req Files",
+    "translation": "必需文件"
+  },
+  {
+    "scope": "General",
+    "source": "Req. files",
+    "translation": "必需文件"
+  },
+  {
+    "scope": "General",
+    "source": "Reqsies",
+    "translation": "必需文件"
+  },
+  {
+    "scope": "General",
+    "source": "Core files",
+    "translation": "核心文件"
+  },
+  {
+    "scope": "General",
+    "source": "Main Files",
+    "translation": "主要文件"
+  },
+  {
+    "scope": "General",
+    "source": "MAIN",
+    "translation": "主要文件"
+  },
+  {
+    "scope": "General",
+    "source": "Dyeable",
+    "translation": "可染色"
+  },
+  {
+    "scope": "General",
+    "source": "Dyable",
+    "translation": "可染色"
+  },
+  {
+    "scope": "General",
+    "source": "Undyable",
+    "translation": "不可染色"
+  },
+  {
+    "scope": "General",
+    "source": "-None-",
+    "translation": "-无-"
+  },
+  {
+    "scope": "General",
+    "source": "Textures",
+    "translation": "纹理"
+  },
+  {
+    "scope": "General",
+    "source": "Base Textures",
+    "translation": "基础纹理"
+  },
+  {
+    "scope": "General",
+    "source": "Basic Textures",
+    "translation": "基础纹理"
+  },
+  {
+    "scope": "General",
+    "source": "Basic Animations",
+    "translation": "基础动画"
+  },
+  {
+    "scope": "General",
+    "source": "Animations",
+    "translation": "动画"
+  },
+  {
+    "scope": "General",
+    "source": "Screenshake",
+    "translation": "屏幕震动"
+  },
+  {
+    "scope": "General",
+    "source": "Screen shake",
+    "translation": "屏幕震动"
+  },
+  {
+    "scope": "General",
+    "source": "More options will be added in the future!",
+    "translation": "后续会添加更多选项！"
+  },
+  {
+    "scope": "Clothing",
+    "source": "WC",
+    "translation": "WC 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "SC",
+    "translation": "SC 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "W.C",
+    "translation": "WC 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "S.C",
+    "translation": "SC 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "W.C - Small Butt",
+    "translation": "WC 腿型 - 小臀"
+  },
+  {
+    "scope": "Clothing",
+    "source": "S.C - Small Butt",
+    "translation": "SC 腿型 - 小臀"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Watermelon Crushers",
+    "translation": "WC 腿型（Watermelon Crushers）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Skull Crushers",
+    "translation": "SC 腿型（Skull Crushers）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Buff",
+    "translation": "肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bobers",
+    "translation": "胸部尺寸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bober & Butt",
+    "translation": "胸部与臀部体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Buttsies",
+    "translation": "臀部／腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bumbum",
+    "translation": "臀部／腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Toggies",
+    "translation": "部件开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Toggles",
+    "translation": "部件开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Toggle",
+    "translation": "部件开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Top Toggles",
+    "translation": "上衣部件开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Dress Toggles",
+    "translation": "连衣裙部件开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Skirt Toggles",
+    "translation": "裙摆部件开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bottom Part Toggles",
+    "translation": "下装部件开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Down Toggle",
+    "translation": "下装部件开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Chest Hide Toggle",
+    "translation": "胸前部件隐藏开关"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bottoms Install",
+    "translation": "下装安装"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bow",
+    "translation": "蝴蝶结"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Chest Bow",
+    "translation": "胸前蝴蝶结"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bra",
+    "translation": "胸罩"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Black Top",
+    "translation": "黑色上衣"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Top",
+    "translation": "上衣"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Down",
+    "translation": "下装"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Stocking Piece",
+    "translation": "丝袜部件"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Tights",
+    "translation": "连裤袜"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Neckpiece",
+    "translation": "颈部饰件"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Choker",
+    "translation": "颈圈"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Cross",
+    "translation": "十字饰件"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Crosses",
+    "translation": "十字饰件"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Sleeve Cross",
+    "translation": "袖口十字饰件"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Neck Cross",
+    "translation": "颈部十字饰件"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Chest section",
+    "translation": "胸前布料部件"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Hip Bands",
+    "translation": "髋部绑带"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Right Stocking",
+    "translation": "右侧丝袜"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Left Stocking",
+    "translation": "左侧丝袜"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Squish Options",
+    "translation": "绑带压肉效果"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Small Butt Compatibility",
+    "translation": "小臀适配"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Small Butt",
+    "translation": "小臀"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Front Chain",
+    "translation": "前侧链饰"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Side Chains",
+    "translation": "侧面链饰"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Skirt Chains",
+    "translation": "裙摆链饰"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Shoulders chains",
+    "translation": "肩部链饰"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Middle chain",
+    "translation": "中部链饰"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Colourset Top",
+    "translation": "上衣配色表"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Colourset Legs",
+    "translation": "腿部配色表"
+  },
+  {
+    "scope": "Clothing",
+    "source": "colourset 1",
+    "translation": "配色表 1"
+  },
+  {
+    "scope": "Clothing",
+    "source": "colourset 2",
+    "translation": "配色表 2"
+  },
+  {
+    "scope": "Clothing",
+    "source": "with leg garter",
+    "translation": "带腿部吊袜带"
+  },
+  {
+    "scope": "Clothing",
+    "source": "without leg garter",
+    "translation": "不带腿部吊袜带"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Sockies",
+    "translation": "袜子"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Tre",
+    "translation": "Tre 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Muse",
+    "translation": "Muse 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Dionys",
+    "translation": "Dionys 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "TBSE",
+    "translation": "TBSE 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "TBSE - X",
+    "translation": "TBSE-X 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "TBSE - Andor",
+    "translation": "TBSE-Andor 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Tre/Muse",
+    "translation": "Tre／Muse 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod",
+    "translation": "LavaBod 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Uranus",
+    "translation": "Uranus 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Uranus Rue",
+    "translation": "Uranus Rue 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Omoi Lava",
+    "translation": "LavaBod Omoi 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Omoi LaRue",
+    "translation": "LaRue Omoi 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabody Standard",
+    "translation": "LavaBod Standard 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Skirt (hide when using top)",
+    "translation": "裙子（使用上衣时隐藏）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Shorts 73 on Spriggan Bottoms",
+    "translation": "73 号短裤（替换 Spriggan Bottoms）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Shorts 59 on Snakeliege Brais",
+    "translation": "59 号短裤（替换 Snakeliege Brais）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Shorts 67 on Isle Vacationer's Shorts",
+    "translation": "67 号短裤（替换 Isle Vacationer's Shorts）"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small",
+    "translation": "小胸"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium",
+    "translation": "中胸"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large",
+    "translation": "大胸"
+  },
+  {
+    "scope": "Chest",
+    "source": "--SMALL--",
+    "translation": "--小胸--"
+  },
+  {
+    "scope": "Chest",
+    "source": "--MEDIUM--",
+    "translation": "--中胸--"
+  },
+  {
+    "scope": "Chest",
+    "source": "--LARGE--",
+    "translation": "--大胸--"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - Buff",
+    "translation": "小胸 - 肌肉型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - Outfit + Skin Tight",
+    "translation": "小胸 - 套装／贴身版"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - Standalone",
+    "translation": "小胸 - 独立混搭版"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - WC",
+    "translation": "小胸 - WC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - WC - Small Butt",
+    "translation": "小胸 - WC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - Buff - WC",
+    "translation": "小胸 - 肌肉型 - WC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - Buff - WC - Small Butt",
+    "translation": "小胸 - 肌肉型 - WC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - SC",
+    "translation": "小胸 - SC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - SC - Small Butt",
+    "translation": "小胸 - SC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - Buff - SC",
+    "translation": "小胸 - 肌肉型 - SC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Small - Buff - SC - Small Butt",
+    "translation": "小胸 - 肌肉型 - SC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - Buff",
+    "translation": "中胸 - 肌肉型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - Outfit + Skin Tight",
+    "translation": "中胸 - 套装／贴身版"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - Standalone",
+    "translation": "中胸 - 独立混搭版"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - WC",
+    "translation": "中胸 - WC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - WC - Small Butt",
+    "translation": "中胸 - WC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - Buff - WC",
+    "translation": "中胸 - 肌肉型 - WC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - Buff - WC - Small Butt",
+    "translation": "中胸 - 肌肉型 - WC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - SC",
+    "translation": "中胸 - SC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - SC - Small Butt",
+    "translation": "中胸 - SC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - Buff - SC",
+    "translation": "中胸 - 肌肉型 - SC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Medium - Buff - SC - Small Butt",
+    "translation": "中胸 - 肌肉型 - SC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - Buff",
+    "translation": "大胸 - 肌肉型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - Outfit + Skin Tight",
+    "translation": "大胸 - 套装／贴身版"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - Standalone",
+    "translation": "大胸 - 独立混搭版"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - WC",
+    "translation": "大胸 - WC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - WC - Small Butt",
+    "translation": "大胸 - WC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - Buff - WC",
+    "translation": "大胸 - 肌肉型 - WC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - Buff - WC - Small Butt",
+    "translation": "大胸 - 肌肉型 - WC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - SC",
+    "translation": "大胸 - SC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - SC - Small Butt",
+    "translation": "大胸 - SC 腿型 - 小臀"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - Buff - SC",
+    "translation": "大胸 - 肌肉型 - SC 腿型"
+  },
+  {
+    "scope": "Chest",
+    "source": "Large - Buff - SC - Small Butt",
+    "translation": "大胸 - 肌肉型 - SC 腿型 - 小臀"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue S",
+    "translation": "Rue 小胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue S Buff",
+    "translation": "Rue 小胸 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue S No Jacket",
+    "translation": "Rue 小胸（无夹克）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue M",
+    "translation": "Rue 中胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue M Buff",
+    "translation": "Rue 中胸 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue M No Jacket",
+    "translation": "Rue 中胸（无夹克）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue L",
+    "translation": "Rue 大胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue L Buff",
+    "translation": "Rue 大胸 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue L No Jacket",
+    "translation": "Rue 大胸（无夹克）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB S",
+    "translation": "YAB 小胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB S Buff",
+    "translation": "YAB 小胸 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB S No Jacket",
+    "translation": "YAB 小胸（无夹克）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB M",
+    "translation": "YAB 中胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB M Buff",
+    "translation": "YAB 中胸 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB M No Jacket",
+    "translation": "YAB 中胸（无夹克）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB L",
+    "translation": "YAB 大胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB L Buff",
+    "translation": "YAB 大胸 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB L No Jacket",
+    "translation": "YAB 大胸（无夹克）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue WC",
+    "translation": "Rue WC 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue SC",
+    "translation": "Rue SC 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB WC",
+    "translation": "YAB WC 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "YAB SC",
+    "translation": "YAB SC 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Sugar",
+    "translation": "LavaBod Sugar 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Sugar Buff",
+    "translation": "LavaBod Sugar 胸型 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Cupcake",
+    "translation": "LavaBod Cupcake 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Cupcake Buff",
+    "translation": "LavaBod Cupcake 胸型 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Teardrop",
+    "translation": "LavaBod Teardrop 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Teardrop Buff",
+    "translation": "LavaBod Teardrop 胸型 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Omoi",
+    "translation": "LavaBod Omoi 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Omoi Buff",
+    "translation": "LavaBod Omoi 胸型 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Medium",
+    "translation": "LavaBod Medium 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Lavabod Standard",
+    "translation": "LavaBod Standard 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Sugar",
+    "translation": "LaRue Sugar 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Sugar Buff",
+    "translation": "LaRue Sugar 胸型 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Cupcake",
+    "translation": "LaRue Cupcake 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Cupcake Buff",
+    "translation": "LaRue Cupcake 胸型 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Teardrop",
+    "translation": "LaRue Teardrop 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Teardrop Buff",
+    "translation": "LaRue Teardrop 胸型 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Omoi",
+    "translation": "LaRue Omoi 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Omoi Buff",
+    "translation": "LaRue Omoi 胸型 - 肌肉型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Medium",
+    "translation": "LaRue Medium 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Larue Standard",
+    "translation": "LaRue Standard 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Muse AFAB",
+    "translation": "Muse AFAB 下身体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Muse AMAB",
+    "translation": "Muse AMAB 下身体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Dionys AFAB",
+    "translation": "Dionys AFAB 下身体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Dionys AMAB",
+    "translation": "Dionys AMAB 下身体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Tre S",
+    "translation": "Tre S 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Tre M",
+    "translation": "Tre M 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Tre L",
+    "translation": "Tre L 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Pythia A/B",
+    "translation": "Pythia A/B 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Pythia C",
+    "translation": "Pythia C 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Pythia D/E",
+    "translation": "Pythia D/E 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Pythia S",
+    "translation": "Pythia S 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Pythia M",
+    "translation": "Pythia M 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Base - WC - Outfit",
+    "translation": "基础体型 - WC 腿型 - 套装版"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Base - WC - Standalone",
+    "translation": "基础体型 - WC 腿型 - 独立混搭版"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Plump - WC - Outfit",
+    "translation": "丰满体型 - WC 腿型 - 套装版"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Plump - WC - Standalone",
+    "translation": "丰满体型 - WC 腿型 - 独立混搭版"
+  },
+  {
+    "scope": "Accessories",
+    "source": "Collar",
+    "translation": "项圈"
+  },
+  {
+    "scope": "RueBlouse",
+    "source": "full (M)",
+    "translation": "完整上衣（中胸）"
+  },
+  {
+    "scope": "RueBlouse",
+    "source": "sleeveless (M)",
+    "translation": "无袖上衣（中胸）"
+  },
+  {
+    "scope": "RueBlouse",
+    "source": "full, no bra (M)",
+    "translation": "完整上衣（中胸，无胸罩）"
+  },
+  {
+    "scope": "RueBlouse",
+    "source": "sleeveless, no bra (M)",
+    "translation": "无袖上衣（中胸，无胸罩）"
+  },
+  {
+    "scope": "RueBlouse",
+    "source": "bra only (M)",
+    "translation": "仅胸罩（中胸）"
+  },
+  {
+    "scope": "Color",
+    "source": "Coal",
+    "translation": "炭黑色"
+  },
+  {
+    "scope": "Color",
+    "source": "Coffee",
+    "translation": "咖啡色"
+  },
+  {
+    "scope": "Color",
+    "source": "Terracotta",
+    "translation": "陶土色"
+  },
+  {
+    "scope": "Color",
+    "source": "Berry Punch",
+    "translation": "莓果色"
+  },
+  {
+    "scope": "Color",
+    "source": "Baby Pink",
+    "translation": "浅粉色"
+  },
+  {
+    "scope": "Color",
+    "source": "Baby Blue",
+    "translation": "浅蓝色"
+  },
+  {
+    "scope": "Color",
+    "source": "Matcha",
+    "translation": "抹茶绿"
+  },
+  {
+    "scope": "Color",
+    "source": "Dark Cherry",
+    "translation": "深樱桃红"
+  },
+  {
+    "scope": "Color",
+    "source": "Royal Blue",
+    "translation": "宝蓝色"
+  },
+  {
+    "scope": "Color",
+    "source": "Deep Forest",
+    "translation": "深森林绿"
+  },
+  {
+    "scope": "Color",
+    "source": "Grape",
+    "translation": "葡萄紫"
+  },
+  {
+    "scope": "Color",
+    "source": "Oreo (Great for Dye!)",
+    "translation": "Oreo 黑白配色（适合染色）"
+  },
+  {
+    "scope": "Color",
+    "source": "Snow (Great for Advanced Dye!)",
+    "translation": "Snow 雪白配色（适合高级染色）"
+  },
+  {
+    "scope": "Face",
+    "source": "Scaleless option",
+    "translation": "无鳞片选项"
+  },
+  {
+    "scope": "Face",
+    "source": "Non-clanmark",
+    "translation": "无氏族面纹"
+  },
+  {
+    "scope": "Face",
+    "source": "004-Scaleless",
+    "translation": "004-无鳞片"
+  },
+  {
+    "scope": "Face",
+    "source": "104-Scaleless",
+    "translation": "104-无鳞片"
+  },
+  {
+    "scope": "Face",
+    "source": "004 - RAEN",
+    "translation": "004 - 晨曦之民"
+  },
+  {
+    "scope": "Face",
+    "source": "104 - XAELA",
+    "translation": "104 - 暮晖之民"
+  },
+  {
+    "scope": "Face",
+    "source": "001-Sun",
+    "translation": "001-逐日之民"
+  },
+  {
+    "scope": "Face",
+    "source": "002-Sun",
+    "translation": "002-逐日之民"
+  },
+  {
+    "scope": "Face",
+    "source": "003-Sun",
+    "translation": "003-逐日之民"
+  },
+  {
+    "scope": "Face",
+    "source": "004-Sun",
+    "translation": "004-逐日之民"
+  },
+  {
+    "scope": "Face",
+    "source": "101-Moon",
+    "translation": "101-护月之民"
+  },
+  {
+    "scope": "Face",
+    "source": "102-Moon",
+    "translation": "102-护月之民"
+  },
+  {
+    "scope": "Face",
+    "source": "103-Moon",
+    "translation": "103-护月之民"
+  },
+  {
+    "scope": "Face",
+    "source": "104-Moon",
+    "translation": "104-护月之民"
+  },
+  {
+    "scope": "Face",
+    "source": "001-Raen V1",
+    "translation": "001-晨曦之民 V1"
+  },
+  {
+    "scope": "Face",
+    "source": "001-Raen V1[Scaleless]",
+    "translation": "001-晨曦之民 V1[无鳞片]"
+  },
+  {
+    "scope": "Face",
+    "source": "001-Raen V2",
+    "translation": "001-晨曦之民 V2"
+  },
+  {
+    "scope": "Face",
+    "source": "001-Raen V2[Scaleless]",
+    "translation": "001-晨曦之民 V2[无鳞片]"
+  },
+  {
+    "scope": "Face",
+    "source": "101-Xaela V1",
+    "translation": "101-暮晖之民 V1"
+  },
+  {
+    "scope": "Face",
+    "source": "101-Xaela V1[Scaleless]",
+    "translation": "101-暮晖之民 V1[无鳞片]"
+  },
+  {
+    "scope": "Face",
+    "source": "101-Xaela V2",
+    "translation": "101-暮晖之民 V2"
+  },
+  {
+    "scope": "Face",
+    "source": "101-Xaela V2[Scaleless]",
+    "translation": "101-暮晖之民 V2[无鳞片]"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Weaponskills",
+    "translation": "战技"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Abilities",
+    "translation": "能力技"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Dance Skills",
+    "translation": "舞步技能"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Buff Skills",
+    "translation": "增益技能"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Role Actions",
+    "translation": "职能技能"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Cascade",
+    "translation": "瀑泻"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Fountain",
+    "translation": "喷泉"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Reverse Cascade",
+    "translation": "逆瀑泻"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Fountainfall",
+    "translation": "坠喷泉"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Windmill",
+    "translation": "风车"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Bladeshower",
+    "translation": "落刃雨"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Rising Windmill",
+    "translation": "升风车"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Bloodshower",
+    "translation": "落血雨"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Saber Dance",
+    "translation": "剑舞"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Starfall Dance",
+    "translation": "流星舞"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Last Dance",
+    "translation": "落幕舞"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Dance of the Dawn",
+    "translation": "拂晓舞"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Fan Dance",
+    "translation": "扇舞·序"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Fan Dance II",
+    "translation": "扇舞·破"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Fan Dance III",
+    "translation": "扇舞·急"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Fan Dance IV",
+    "translation": "扇舞·终"
+  },
+  {
+    "scope": "Dancer",
+    "source": "En Avant",
+    "translation": "前冲步"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Finishing Move",
+    "translation": "结束动作"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Standard Step",
+    "translation": "标准舞步"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Standard Finish",
+    "translation": "标准舞步结束"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Technical Step",
+    "translation": "技巧舞步"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Technical Finish",
+    "translation": "技巧舞步结束"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Tillana",
+    "translation": "提拉纳"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Closed Position",
+    "translation": "闭式舞姿"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Curing Waltz",
+    "translation": "治疗之华尔兹"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Shield Samba",
+    "translation": "防守之桑巴"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Devilment",
+    "translation": "进攻之探戈"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Flourish",
+    "translation": "百花争艳"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Improvisation",
+    "translation": "即兴表演"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Head Graze",
+    "translation": "伤头"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Peloton",
+    "translation": "速行"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Second Wind",
+    "translation": "内丹"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Limit Break",
+    "translation": "极限技"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Dance Step skill icons",
+    "translation": "舞步技能图标"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Dance Step HUD icons",
+    "translation": "舞步量谱图标"
+  },
+  {
+    "scope": "Dancer",
+    "source": "Devilment (smaller wings)",
+    "translation": "进攻之探戈（较小翅膀）"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Small RUE breasts, built to be used for mixing and matching outfits together.",
+    "translation": "适配 Rue 小胸，用于自由混搭服装。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Small RUE breasts, built around the skirt MOSTLY, but is far more skin tight, and works well with underwear and other lower pants options.",
+    "translation": "适配 Rue 小胸，主要围绕本套装的裙子制作；版型更贴身，也适合搭配内裤和其他下装。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Large RUE breasts, built to be used for mixing and matching outfits together.",
+    "translation": "适配 Rue 大胸，用于自由混搭服装。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Large RUE breasts, built around the skirt MOSTLY, but is far more skin tight, and works well with underwear and other lower pants options.",
+    "translation": "适配 Rue 大胸，主要围绕本套装的裙子制作；版型更贴身，也适合搭配内裤和其他下装。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Built for the Watermelon Crushers with no C+ scale, and the skirt is left unchanged to work with the outfit.",
+    "translation": "适配未使用 Customize+ 体型缩放的 WC 腿型；裙子保持原版，以搭配本套装。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Built for the Watermelon Crushers with thicker / bigger C+ scales, and the skirt is left unchanged to work with the outfit.",
+    "translation": "适配使用 Customize+ 加粗／放大后的 WC 腿型；裙子保持原版，以搭配本套装。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Built for the Watermelon Crushers with no C+ scale, and the skirt is changed to be thinner at the top for more use with other outfits.",
+    "translation": "适配未使用 Customize+ 体型缩放的 WC 腿型；裙子上部收窄，便于搭配其他服装。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Built for the Watermelon Crushers with thicker / bigger C+ scale, and the skirt is changed to be thinner at the top for more use with other outfits.",
+    "translation": "适配使用 Customize+ 加粗／放大后的 WC 腿型；裙子上部收窄，便于搭配其他服装。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "the whole blouse with bra\r\nsize: rue+ medium",
+    "translation": "完整上衣，含胸罩\n体型：Rue+ 中胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "blouse without the long sleeves with bra\r\nsize: rue+ medium",
+    "translation": "去除长袖的上衣，含胸罩\n体型：Rue+ 中胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "the whole blouse without bra\r\nsize: rue+ medium",
+    "translation": "完整上衣，无胸罩\n体型：Rue+ 中胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "blouse without the long sleeves without bra\r\nsize: rue+ medium",
+    "translation": "去除长袖的上衣，无胸罩\n体型：Rue+ 中胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "bra only without the blouse\r\nsize: rue+ medium",
+    "translation": "仅胸罩，不含上衣\n体型：Rue+ 中胸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Port of an Infinity Nikki Model <3\r\n\r\nReplaces: Riviera Dress\r\n\r\nMany more dye options in Advanced Editing! \r\n\r\n- Share your Outfits on X with #PockyMods <3\r\n- X: @Pocky_XIV\r\n\r\nFit to Rue M, YAS needed!\r\nWill clip with extreme poses and strong C+\r\nAlmost everything is also dyeable in advanced dyes!\r\n\r\nPermissions\r\n- Don’t steal + please credit.\r\n- Please include a link back to the original mod page for accessibility.\r\n- Port, upscale, edit anything you like. Also feel free to include textures in up-/downscales (as long as I'm credited in the description)!\r\n- DO NOT use for paywalled, time gated/early access, or vaulted mods.\r\n- No ports or edits for NSFW Lala allowed",
+    "translation": "移植自《无限暖暖》的模型 <3\n\n替换：Riviera Dress\n\n高级编辑中还有更多染色选项！\n\n- 在 X（Twitter）分享你的搭配，并使用 #PockyMods <3\n- X：@Pocky_XIV\n\n适配 Rue 中胸，需要 YAS！\n极端姿势或幅度较大的 Customize+ 体型缩放可能导致穿模。\n\n几乎所有部件都可在高级染色中调整颜色！\n\n使用授权\n- 请勿盗用，并注明作者。\n- 请附上原 Mod 页面的链接，方便他人找到原作。\n- 可以移植、适配其他体型及修改。体型适配版本也可以附带纹理，但须在说明中注明作者。\n- 不得用于付费、限时／抢先体验或不再公开提供的 Mod。\n- 不允许将本 Mod 移植或修改为用于拉拉菲尔的成人内容。"
+  },
+  {
+    "scope": "Face",
+    "source": "✦ Make up mod for AURA\r\n| face 004 & 104\r\n\r\n✦ Dawntrail Updated\r\n✦ Contributors: FACE DEVKIT by Major Praline / Black&White by Yuria\r\n\r\n- Please let me know if there are any issues or need some request.\r\n- Do not repost, redistribute, resell and upload anywhere.\r\n- Do not port to other face or race.\r\n- Edit for personal use : Ok!\r\n\r\n✦ If you like my mods, feel free to give me some more ko-fi > <\r\n- THANK YOU -",
+    "translation": "✦ 敖龙族妆容 Mod\n| 脸型 004 与 104\n\n✦ 已适配“金曦之遗辉”版本\n✦ 贡献者：Major Praline 的 FACE DEVKIT / Yuria 的 Black&White\n\n- 如有问题或其他需求，请告知作者。\n- 请勿转载、重新分发、转售或上传至其他地方。\n- 请勿移植到其他脸型或种族。\n- 可以为个人使用进行修改。\n\n✦ 如果喜欢作者的 Mod，欢迎通过 Ko-fi 支持 > <\n- 谢谢 -"
+  },
+  {
+    "scope": "Face",
+    "source": "✦ Make up mod for Au Ra\r\n| FACE 001/101\r\nDawntrail Updated!\r\nCredits : FACE DEVKIT by Major Praline\r\n\r\n- Please let me know if there are any issues or need some request.\r\n- Do not repost, redistribute, resell, upload anywhere and share the for anyone who not purchase.\r\n- Do not port to other face or race without permission.\r\n- No refunds since this is a digital product.\r\n- Edit for personal use is allowed.\r\n\r\n✦ If you like my mods, feel free to give me some more tea.\r\nTHANK YOU!",
+    "translation": "✦ 敖龙族妆容 Mod\n| 脸型 001 / 101\n已适配“金曦之遗辉”版本！\n贡献者：Major Praline 的 FACE DEVKIT\n\n- 如有问题或其他需求，请告知作者。\n- 请勿转载、重新分发、转售、上传至其他地方，或分享给未购买者。\n- 未经许可，请勿移植到其他脸型或种族。\n- 本产品为数字商品，不提供退款。\n- 允许为个人使用进行修改。\n\n✦ 如果喜欢作者的 Mod，欢迎请作者喝杯茶。\n谢谢！"
+  },
+  {
+    "scope": "Face",
+    "source": "✦ Make up mod for Miqo'te\r\n| all face \r\nDawntrail Updated!\r\nCredits : FACE DEVKIT by Major Praline\r\n\r\n- Please let me know if there are any issues or need some request.\r\n- Do not repost, redistribute, resell, upload anywhere and share the for anyone who not purchase.\r\n- Do not port to other face or race without permission.\r\n- No refunds since this is a digital product.\r\n- Edit for personal use is allowed.\r\n\r\n✦ If you like my mods, feel free to give me some more tea.\r\nTHANK YOU!",
+    "translation": "✦ 猫魅族妆容 Mod\n| 所有脸型\n已适配“金曦之遗辉”版本！\n贡献者：Major Praline 的 FACE DEVKIT\n\n- 如有问题或其他需求，请告知作者。\n- 请勿转载、重新分发、转售、上传至其他地方，或分享给未购买者。\n- 未经许可，请勿移植到其他脸型或种族。\n- 本产品为数字商品，不提供退款。\n- 允许为个人使用进行修改。\n\n✦ 如果喜欢作者的 Mod，欢迎请作者喝杯茶。\n谢谢！"
+  }
+]
