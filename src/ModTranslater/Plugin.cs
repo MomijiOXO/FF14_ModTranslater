@@ -8,8 +8,8 @@ using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using ModTranslater.Core;
 
-[assembly: AssemblyVersion("0.1.3.0")]
-[assembly: AssemblyFileVersion("0.1.3.0")]
+[assembly: AssemblyVersion("0.1.4.0")]
+[assembly: AssemblyFileVersion("0.1.4.0")]
 namespace ModTranslater;
 
 public sealed class Plugin : IDalamudPlugin
@@ -33,7 +33,7 @@ public sealed class Plugin : IDalamudPlugin
     private bool open, busy, disposed;
     private int requestedTab = -1;
     private bool focusRequested;
-    private string filter = "", credentialId = "", credentialSecret = "", message = "先配置翻译服务，再扫描新增与更新。";
+    private string filter = "", credentialId = "", credentialSecret = "", message = "先配置翻译服务，再扫描当前英文 Mod。";
     private static readonly string[] ProviderNames = ["OpenAI 兼容接口", "百度翻译", "腾讯翻译", "有道翻译", "谷歌翻译 (Cloud v2)"];
 
     public Plugin(IDalamudPluginInterface pluginInterface, ICommandManager commandManager, IFramework framework)
@@ -140,10 +140,10 @@ public sealed class Plugin : IDalamudPlugin
     }
     private void DrawMods()
     {
-        ImGui.TextWrapped("普通扫描：含中文就跳过整个 Mod。强制汉化：只翻译不含中文的英文条目。目标语言：简体中文。");
+        ImGui.TextWrapped("普通扫描：按当前有效 JSON 检查，无中文就汉化；含中文则跳过整个 Mod。强制汉化：只翻译不含中文的英文条目。目标语言：简体中文。");
         ImGui.BeginDisabled(busy);
         if (ImGui.Button("刷新列表")) RefreshList(); ImGui.SameLine();
-        if (ImGui.Button("扫描新增与更新")) Translate(false); ImGui.SameLine();
+        if (ImGui.Button("扫描汉化")) Translate(false); ImGui.SameLine();
         ImGui.BeginDisabled(selected.Count == 0);
         if (ImGui.Button($"强制汉化所选 ({selected.Count})")) Translate(true); ImGui.SameLine();
         if (ImGui.Button("恢复所选原版")) ImGui.OpenPopup("restore-confirm");
