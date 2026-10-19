@@ -1,0 +1,50 @@
+[
+  {
+    "source": "A",
+    "context": "必需文件组中的单字母选项",
+    "reason": "可能只是作者的选项标记；其他组中 A 也可能指形状或款式，不建立通用译法。",
+    "automaticTranslation": false
+  },
+  {
+    "source": "x",
+    "context": "必需文件组中的单字母选项",
+    "reason": "无法仅凭单字母判断是标记、叉号还是选项名称，保留原文供人工核对。",
+    "automaticTranslation": false
+  },
+  {
+    "source": "F / M",
+    "context": "颈圈选项中的单字母标记",
+    "reason": "可能表示女性／男性适配，也可能是作者自己的型号。没有说明时不能当作通用性别或尺码翻译。",
+    "automaticTranslation": false
+  },
+  {
+    "source": "OK",
+    "context": "技能特效组中的选项名称",
+    "reason": "可能只是启用标记，不能断定是确认按钮或某个特效版本。",
+    "automaticTranslation": false
+  },
+  {
+    "source": "Boom :3",
+    "context": "地星技能特效中的选项",
+    "reason": "可能是爆炸特效的俏皮名称；缺少预览对照，保留原文，避免泛用于音效、技能或其他 Mod。",
+    "automaticTranslation": false
+  },
+  {
+    "source": "Land Walker (LB3)",
+    "context": "尼尔风格战士技能特效包",
+    "reason": "疑似作者为联动效果命名，缺少可靠的官方中译对应，不按字面译为行走者。",
+    "automaticTranslation": false
+  },
+  {
+    "source": "Sage",
+    "context": "布料花纹、颜色、职业名称等不同语境",
+    "reason": "本次服装字典译作鼠尾草；职业语境应为贤者。不能将服装词条移到 General。",
+    "automaticTranslation": false
+  },
+  {
+    "source": "Small / Medium / Large",
+    "context": "胸部、裙子、袜子或其他部件的尺码",
+    "reason": "只有明确的胸部语境才套用小胸／中胸／大胸。Booty、袜子和裙子等语境不能直接沿用胸型译法。",
+    "automaticTranslation": false
+  }
+]
