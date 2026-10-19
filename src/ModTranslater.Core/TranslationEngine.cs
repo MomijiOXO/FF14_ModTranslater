@@ -37,12 +37,13 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
                         JsonStorage.Save(RecordsPath, records);
                         ModWriter.Acknowledge(recoveredCommit);
                     }
-                    if (!force && old?.Fingerprint == snapshot.Fingerprint && old.Status == "PendingReload")
+                    var hasChinese = snapshot.Texts.Any(t => TextRules.HasChinese(t.Original));
+                    // Scan current effective text; historical records do not suppress English-only Mods.
+                    if (!force && hasChinese && old?.Fingerprint == snapshot.Fingerprint && old.Status == "PendingReload")
                     {
                         await bridge.ReloadAsync(mod, token); old.Status = "Translated"; status = "已刷新";
                     }
-                    else if (!force && old?.Fingerprint == snapshot.Fingerprint && old.Status != "Failed") status = "未变化";
-                    else if (!force && snapshot.Texts.Any(t => TextRules.HasChinese(t.Original)))
+                    else if (!force && hasChinese)
                     {
                         records[mod.Key] = new() { Fingerprint = snapshot.Fingerprint, Status = "Chinese", Backup = old?.Backup, CurrentHashes = old?.CurrentHashes };
                         status = "含中文，跳过整个 Mod";
