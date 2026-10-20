@@ -48,7 +48,7 @@ internal static class PhraseTranslations
         var groupName = group?["Name"]?.GetValue<string>() ?? "";
         var allNames = string.Join(" ", Groups(snapshot).Select(g => g["Name"]?.GetValue<string>() ?? ""));
         var metaName = snapshot.Documents["meta.json"]["Name"]?.GetValue<string>() ?? snapshot.Mod.Name;
-        var clothing = Matches(metaName + " " + allNames, @"\b(rue\+?|yab|bibo\+?|lavabod|larue|tbse|pythia|shirt[s]?|blouse|dress|skirt[s]?|panties|choker|stocking|sockies|bobers|buttsies|bumbum)\b|上衣|连衣裙|裙摆|胸部尺寸|臀部|腿型|胸围|内裤|丝袜");
+        var clothing = Matches(metaName + " " + allNames, @"\b(rue\+?|yab|bibo\+?|lavabod|larue|tbse|pythia|shirt[s]?|blouse|dress|skirt[s]?|panties|choker|stocking|sockies|bobers|buttsies|bumbum)\b|\b(?:top|bottom|boot)s?\s+(?:style|size)s?(?:\s+options?)?\b|上衣|下装|靴子|连衣裙|裙摆|胸部尺寸|臀部|腿型|胸围|内裤|丝袜");
         clothing = clothing && !Matches(groupName, @"\b(weapons?|weaponskills|archer|bard|abilities|actions)\b|buff.*skills|武器|弓术|战技|技能");
         var dancer = Matches(metaName, @"\b(dancer|dnc)\b|舞者") || snapshot.Texts.Any(t => Normalize(t.Original).Equals("Saber Dance", StringComparison.OrdinalIgnoreCase));
         var face = Matches(allNames, @"face|clanmark|scaleless|脸|鳞片|氏族面纹");
