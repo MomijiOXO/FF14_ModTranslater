@@ -10,7 +10,7 @@ https://raw.githubusercontent.com/MomijiOXO/FF14_ModTranslater/main/repo.json
 
 启用 Penumbra 后输入 `/modtrans`，配置 API 并扫描。含中文的 Mod 在普通扫描中跳过；强制汉化保留中文和中英混合条目。
 
-“恢复所选原版”恢复最早保存的版本，后续汉化不会覆盖首次备份。旧记录从历史备份迁移；若最早原文已缺失，无法凭空找回英文。Mod 已更新或编辑时拒绝覆盖。
+“恢复未翻译版本”可恢复后重新扫描汉化，当前无中文的 Mod 会跳过。重新导入未翻译的新版 Mod 后，扫描会重新建立对应的原文备份。
 
 编译需要 .NET 10 SDK 和卫月 API 15 程序集，运行 `build.ps1` 并指定 `-SdkRoot`、`-DalamudRoot`。
 
