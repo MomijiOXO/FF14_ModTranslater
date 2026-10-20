@@ -3,7 +3,7 @@ using System.Text.Json.Nodes;
 
 namespace ModTranslater.Core;
 
-// Original payloads are published once and never replaced by later translations.
+// Preserve the current untranslated baseline; replace it only for a newly imported untranslated Mod.
 public static class OriginalBackups
 {
     private static JsonNode? Structure(JsonNode? node, string field = "")
@@ -52,18 +52,39 @@ public static class OriginalBackups
         return bytes;
     }
 
-    public static string Ensure(ModSnapshot snapshot, string backups, bool allowNew = true)
+    private static void DeleteRetired(string folder)
+    {
+        if (!Directory.Exists(folder)) return;
+        if ((File.GetAttributes(folder) & FileAttributes.ReparsePoint) != 0 || Directory.EnumerateDirectories(folder).Any())
+            throw new IOException("原始备份目录无效。");
+        var files = Directory.GetFiles(folder);
+        foreach (var file in files) ModSnapshot.EnsurePlainFile(file);
+        foreach (var file in files) File.Delete(file);
+        Directory.Delete(folder);
+    }
+
+    public static string Ensure(ModSnapshot snapshot, string backups, bool allowNew = true, bool refreshUntranslated = false)
     {
         var folder = Folder(snapshot.Mod, backups);
+        var retired = folder + ".previous";
+        // Recover an interrupted baseline swap before reading or replacing it.
+        if (!Directory.Exists(folder) && Directory.Exists(retired)) Directory.Move(retired, folder);
+        var useCurrent = refreshUntranslated && !snapshot.Texts.Any(t => TextRules.HasChinese(t.Original));
         if (Directory.Exists(folder))
         {
             var saved = JsonStorage.Load<BackupManifest>(Path.Combine(folder, "manifest.json"), () => throw new IOException("原始备份记录缺失。"));
             if (saved.State != "Original" || saved.BeforeHashes.Count == 0 || !string.Equals(saved.ModPath, snapshot.Mod.FullPath, StringComparison.OrdinalIgnoreCase))
                 throw new IOException("原始备份记录无效。");
             foreach (var (name, hash) in saved.BeforeHashes) Read(folder, name, hash);
-            return folder;
+            var same = saved.BeforeHashes.Count == snapshot.OriginalFiles.Count
+                && snapshot.OriginalFiles.All(kv => saved.BeforeHashes.GetValueOrDefault(kv.Key) == ModSnapshot.Hash(kv.Value));
+            if (!useCurrent || same)
+            {
+                DeleteRetired(retired);
+                return folder;
+            }
         }
-        var history = History(snapshot.Mod, backups);
+        var history = useCurrent ? [] : History(snapshot.Mod, backups);
         if (!allowNew && history.Count == 0) throw new IOException("此 Mod 没有原始备份。");
         var originals = new Dictionary<string, byte[]>(snapshot.OriginalFiles, StringComparer.OrdinalIgnoreCase);
         var earliest = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -82,7 +103,17 @@ public static class OriginalBackups
         }
         JsonStorage.Save(Path.Combine(staging, "manifest.json"), baseline);
         snapshot.CheckUnchanged();
-        Directory.Move(staging, folder);
+        // Prepare and validate the new baseline before displacing the previous one.
+        DeleteRetired(retired);
+        var replacing = Directory.Exists(folder);
+        if (replacing) Directory.Move(folder, retired);
+        try { Directory.Move(staging, folder); }
+        catch
+        {
+            if (replacing && !Directory.Exists(folder)) Directory.Move(retired, folder);
+            throw;
+        }
+        DeleteRetired(retired);
         return folder;
     }
 

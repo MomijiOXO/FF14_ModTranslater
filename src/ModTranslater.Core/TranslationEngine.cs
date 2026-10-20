@@ -58,6 +58,9 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
                         }
                         else
                         {
+                            // A reimported untranslated Mod becomes the baseline for its next restore.
+                            token.ThrowIfCancellationRequested();
+                            OriginalBackups.Ensure(snapshot, backups, refreshUntranslated: !hasChinese);
                             // Resolve each entry first: identical words can mean different things in different groups.
                             var outputs = new string?[entries.Length];
                             for (var j = 0; j < entries.Length; j++)
@@ -105,12 +108,15 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
         }
         finally { gate.Release(); }
     }
-    public async Task RestoreAsync(InstalledMod mod, CancellationToken token)
+    public async Task<bool> RestoreAsync(InstalledMod mod, CancellationToken token)
     {
         await gate.WaitAsync(token);
         try
         {
             using var processLock = await AcquireProcessLock(token);
+            token.ThrowIfCancellationRequested();
+            // Skip untouched or newly imported English Mods before recovery or backup access.
+            if (!new ModSnapshot(mod).Texts.Any(t => TextRules.HasChinese(t.Original))) return false;
             var records = LoadRecords();
             records.TryGetValue(mod.Key, out var record);
             var backups = Path.Combine(dataDirectory, "backups");
@@ -125,6 +131,7 @@ public sealed class TranslationEngine(string dataDirectory, IPenumbraBridge brid
             await bridge.ReloadAsync(mod, CancellationToken.None);
             record.CurrentHashes = new ModSnapshot(mod).OriginalFiles.ToDictionary(kv => kv.Key, kv => ModSnapshot.Hash(kv.Value));
             record.Status = "Restored"; JsonStorage.Save(RecordsPath, records);
+            return true;
         }
         finally { gate.Release(); }
     }
