@@ -8,8 +8,8 @@ using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using ModTranslater.Core;
 
-[assembly: AssemblyVersion("0.1.5.0")]
-[assembly: AssemblyFileVersion("0.1.5.0")]
+[assembly: AssemblyVersion("0.1.6.0")]
+[assembly: AssemblyFileVersion("0.1.6.0")]
 namespace ModTranslater;
 
 public sealed class Plugin : IDalamudPlugin
@@ -98,7 +98,11 @@ public sealed class Plugin : IDalamudPlugin
             foreach (var mod in chosen)
             {
                 token.ThrowIfCancellationRequested();
-                try { await engine.RestoreAsync(mod, token); results.Add(new(mod.Key, mod.Name, "已恢复最早原版")); }
+                try
+                {
+                    var restored = await engine.RestoreAsync(mod, token);
+                    results.Add(new(mod.Key, mod.Name, restored ? "已恢复未翻译版本" : "当前为未翻译版本，已跳过"));
+                }
                 catch (OperationCanceledException) when (token.IsCancellationRequested) { throw; }
                 catch { results.Add(new(mod.Key, mod.Name, "恢复失败：无备份、文件已更新或刷新不可用")); }
             }
@@ -146,17 +150,17 @@ public sealed class Plugin : IDalamudPlugin
         if (ImGui.Button("扫描汉化")) Translate(false); ImGui.SameLine();
         ImGui.BeginDisabled(selected.Count == 0);
         if (ImGui.Button($"强制汉化所选 ({selected.Count})")) Translate(true); ImGui.SameLine();
-        if (ImGui.Button("恢复所选原版")) ImGui.OpenPopup("restore-confirm");
+        if (ImGui.Button("恢复未翻译版本")) ImGui.OpenPopup("restore-confirm");
         ImGui.EndDisabled();
         if (ImGui.BeginPopup("restore-confirm"))
         {
-            ImGui.TextWrapped("将恢复所选 Mod 最早保存的原版。后续汉化不会覆盖原始备份。Mod 已更新或编辑时会拒绝覆盖。");
+            ImGui.TextWrapped("将所选 Mod 恢复为未翻译版本。");
             if (ImGui.Button("确认恢复")) { Restore(); ImGui.CloseCurrentPopup(); }
             ImGui.SameLine(); if (ImGui.Button("取消")) ImGui.CloseCurrentPopup(); ImGui.EndPopup();
         }
         ImGui.InputText("搜索", ref filter, 256);
         var visible = mods.Where(m => m.Name.Contains(filter, StringComparison.OrdinalIgnoreCase) || m.Directory.Contains(filter, StringComparison.OrdinalIgnoreCase)).ToArray();
-        if (ImGui.Button("全选搜索结果")) foreach (var m in visible) selected.Add(m.Key); ImGui.SameLine();
+        if (ImGui.Button("全选")) foreach (var m in visible) selected.Add(m.Key); ImGui.SameLine();
         if (ImGui.Button("清空选择")) selected.Clear(); ImGui.SameLine(); ImGui.TextUnformatted($"共 {mods.Count} 个 / 显示 {visible.Length} 个");
         if (ImGui.BeginTable("mods", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.ScrollY | ImGuiTableFlags.Resizable, new Vector2(0, -120)))
         {
