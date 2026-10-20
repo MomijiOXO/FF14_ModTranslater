@@ -2638,5 +2638,95 @@
     "scope": "Dancer",
     "source": "If you're using Penumbra, enable this on the Default filter.",
     "translation": "使用 Penumbra 时，请在默认筛选（Default）中启用此项。"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue Top Sizes",
+    "translation": "Rue 上衣尺码"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue Bottom Sizes",
+    "translation": "Rue 下装尺寸"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue Extras",
+    "translation": "Rue 附加选项"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue Omoi",
+    "translation": "Rue Omoi 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue Sayonara",
+    "translation": "Rue Sayonara 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue Mini",
+    "translation": "Rue Mini 胸型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Rue Smol",
+    "translation": "Rue Smol 腿型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Top Style Options",
+    "translation": "上衣体型选项"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bottom Size Options",
+    "translation": "下装体型选项"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Style Options",
+    "translation": "服装部件选项"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Boot Style Option",
+    "translation": "靴子款式选项"
+  },
+  {
+    "scope": "Clothing",
+    "source": "TF3",
+    "translation": "TF3 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "TF3 M",
+    "translation": "TF3 M 体型"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Bra Cover",
+    "translation": "胸罩遮盖层"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Shawl",
+    "translation": "披肩"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Wrist Cuffs",
+    "translation": "腕部饰件"
+  },
+  {
+    "scope": "Clothing",
+    "source": "Full",
+    "translation": "完整"
+  },
+  {
+    "scope": "Clothing",
+    "source": "No Leg",
+    "translation": "隐藏腿部部件"
   }
 ]
