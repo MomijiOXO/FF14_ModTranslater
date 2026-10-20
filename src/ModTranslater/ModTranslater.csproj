@@ -2,7 +2,7 @@
   <PropertyGroup>
     <DalamudLibPath Condition="'$(DalamudLibPath)' == ''">../../work/dalamud-cn</DalamudLibPath>
     <PlatformTarget>x64</PlatformTarget>
-    <Version>0.1.4</Version>
+    <Version>0.1.5</Version>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
